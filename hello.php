@@ -1,1 +1,9 @@
-{ "sites": [ { "Name": "菜鸟教程", "Url": "www.runoob.com", "Country": "CN" }, { "Name": "Google", "Url": "www.google.com", "Country": "USA" }, { "Name": "Facebook", "Url": "www.facebook.com", "Country": "USA" }, { "Name": "微博", "Url": "www.weibo.com", "Country": "CN" } ] }
+  @ResponseBody
+    @RequestMapping("/getMySeat")
+    public String getMySeatSuccess(@RequestParam("callback") String callback){
+        Gson gson=new Gson();
+        Map<String,String> map=new HashMap<>();
+        map.put("seat","1_2_06_12");
+        logger.info(callback);
+        return callback+"("+gson.toJson(map)+")";
+    }
