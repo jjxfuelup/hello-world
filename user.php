@@ -1,3 +1,4 @@
+header("Access-Control-Allow-Origin: *");
 <?php
 $ret = array(
     'name' => isset($_POST['name'])? $_POST['name'] : '',
